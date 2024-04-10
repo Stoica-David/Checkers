@@ -39,17 +39,17 @@ namespace CheckersGame.ViewModels
             }
         }
 
-        private ICommand switchToGameCommand;
-        public ICommand SwitchToGameCommand
+        private ICommand switchToHelpCommand;
+        public ICommand SwitchToHelpCommand
         {
             get
             {
-                if (switchToGameCommand == null)
+                if (switchToHelpCommand  == null)
                 {
-                    switchToGameCommand = new RelayCommand(o => true, o => { OnSwitchToGame(); });
+                    switchToHelpCommand = new RelayCommand(o => true, o => { OnSwitchToHelp(); });
                 }
 
-                return switchToGameCommand;
+                return switchToHelpCommand;
             }
         }
 
@@ -62,7 +62,7 @@ namespace CheckersGame.ViewModels
         public SwitchToSearch OnSwitchToSearch { get; set; }
 
         public delegate void SwitchToGame();
-        public SwitchToSearch OnSwitchToGame { get; set; }
+        public SwitchToSearch OnSwitchToHelp { get; set; }
 
         public MenuVM()
         {

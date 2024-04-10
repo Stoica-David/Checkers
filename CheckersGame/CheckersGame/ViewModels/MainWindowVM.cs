@@ -9,6 +9,7 @@ namespace CheckersGame.ViewModels
 {
     public class MainWindowVM : BaseVM
     {
+        // Properties
         private BaseVM selectedVM;
         public BaseVM SelectedVM
         {
@@ -23,16 +24,28 @@ namespace CheckersGame.ViewModels
             }
         }
 
+        // ViewModels
         public MenuVM MenuViewModel { get; set; }
+        public HelpVM HelpViewModel { get; set; }
 
+
+        // Methods
         public MainWindowVM()
         {
             switchToMenu();
         }
 
+        public void switchToHelp()
+        {
+            HelpViewModel = new HelpVM();
+            HelpViewModel.OnSwitchToMenu = switchToMenu;
+            SelectedVM = HelpViewModel;
+        }
+
         public void switchToMenu()
         {
             MenuViewModel = new MenuVM();
+            MenuViewModel.OnSwitchToHelp = switchToHelp;
             SelectedVM = MenuViewModel;
         }
     }

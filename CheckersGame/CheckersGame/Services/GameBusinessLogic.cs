@@ -1,4 +1,5 @@
 ﻿using CheckersGame.Models;
+using CheckersGame.Properties;
 using CheckersGame.ViewModels;
 using System;
 using System.Collections.Generic;

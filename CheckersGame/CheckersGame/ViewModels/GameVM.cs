@@ -1,4 +1,5 @@
 ﻿using CheckersGame.Models;
+using CheckersGame.Properties;
 using CheckersGame.Services;
 using Microsoft.Win32;
 using System;
@@ -54,14 +55,6 @@ namespace CheckersGame.ViewModels
             
             this.WindowHeight = 700;
             this.WindowWidth = 1200;
-        }
-
-        public bool MultipleJumps
-        {
-            set
-            {
-                gameLogic.MultipleJumps = value;
-            }
         }
 
         private ObservableCollection<ObservableCollection<CellVM>> CellBoardToCellVMBoard(ref ObservableCollection<ObservableCollection<Cell>> board)

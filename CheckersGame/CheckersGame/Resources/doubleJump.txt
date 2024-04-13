@@ -11,7 +11,7 @@
     <PlayerColor>White</PlayerColor>
   </SecondPlayer>
   <IsGameOver>false</IsGameOver>
-  <MultipleJumps>false</MultipleJumps>
+  <MultipleJumps>true</MultipleJumps>
   <Board>
     <ArrayOfCell>
       <Cell>

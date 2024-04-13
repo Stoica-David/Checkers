@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CheckersGame.Properties;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -52,6 +53,12 @@ namespace CheckersGame.ViewModels
             MenuViewModel.OnSwitchToStats = switchToStats;
             MenuViewModel.OnSwitchToGame = switchToGame;
             SelectedVM = MenuViewModel;
+
+            if (GameViewModel != null && Settings.Default.IsToggleButtonChecked != GameViewModel.GameLogic.MultipleJumps)
+            {
+                Settings.Default.IsToggleButtonChecked = GameViewModel.GameLogic.MultipleJumps;
+                Settings.Default.Save();
+            }
         }
 
         public void switchToStats()

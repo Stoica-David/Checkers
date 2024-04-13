@@ -9,33 +9,32 @@ namespace CheckersGame.ViewModels
 {
     public class MenuVM : BaseVM
     {
-        // COMMAND
-
-        private ICommand switchToLoginCommand;
-        public ICommand SwitchToLoginCommand
+        private static MenuVM _instance;
+        public static MenuVM Instance
         {
             get
             {
-                if (switchToLoginCommand == null)
+                if (_instance == null)
                 {
-                    switchToLoginCommand = new RelayCommand(o => true, o => { OnSwitchToLogin(); });
+                    _instance = new MenuVM();
                 }
-
-                return switchToLoginCommand;
+                return _instance;
             }
         }
 
-        private ICommand switchToSearchCommand;
-        public ICommand SwitchToSearchCommand
+        // COMMAND
+
+        private ICommand switchToStatsCommand;
+        public ICommand SwitchToStatsCommand
         {
             get
             {
-                if (switchToSearchCommand == null)
+                if (switchToStatsCommand == null)
                 {
-                    switchToSearchCommand = new RelayCommand(o => true, o => { OnSwitchToSearch(); });
+                    switchToStatsCommand = new RelayCommand(o => true, o => { OnSwitchToStats(); });
                 }
 
-                return switchToSearchCommand;
+                return switchToStatsCommand;
             }
         }
 
@@ -55,14 +54,12 @@ namespace CheckersGame.ViewModels
 
         // DELEGATES
 
-        public delegate void SwitchToLogin();
-        public SwitchToLogin OnSwitchToLogin { get; set; }
+        
+        public delegate void SwitchToStats();
+        public SwitchToStats OnSwitchToStats { get; set; }
 
-        public delegate void SwitchToSearch();
-        public SwitchToSearch OnSwitchToSearch { get; set; }
-
-        public delegate void SwitchToGame();
-        public SwitchToSearch OnSwitchToHelp { get; set; }
+        public delegate void SwitchToHelp();
+        public SwitchToHelp OnSwitchToHelp { get; set; }
 
         public MenuVM()
         {

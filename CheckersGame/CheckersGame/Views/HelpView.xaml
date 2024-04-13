@@ -5,7 +5,30 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CheckersGame.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="1080" d:DesignWidth="1920">
+             d:DesignHeight="1080" d:DesignWidth="1920"
+             Background="#EBE0CD">
+
+    <UserControl.Resources>
+        <Style x:Key="CustomButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="LightGray"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}" CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -19,19 +42,20 @@
             <RowDefinition Height="250"/>
             <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
-        
-        <!--About section-->
-        <Label Grid.Row="0" Grid.Column="0" Content="About" FontSize="100" FontWeight="Bold" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
-        <Label Grid.Row="1" Grid.Column="0" Content="{Binding NameLabel}" FontSize="50" FontWeight="DemiBold" Foreground="DarkGray" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <Label Grid.Row="2" Grid.Column="0" Content="{Binding EMailLabel}" FontSize="50" FontWeight="DemiBold" Foreground="DarkGray" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <Label Grid.Row="3" Grid.Column="0" Content="{Binding GRLabel}" FontSize="50" FontWeight="DemiBold" Foreground="DarkGray" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        
-        
-        <!--Description section-->
-        <Label Grid.Row="1" Grid.Column="1" Content="Game Description" FontSize="70" FontWeight="Bold" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Label Grid.Row="2" Grid.Column="1" Content="{Binding GameDescription}" FontSize="15" FontWeight="Light" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-        <Label Grid.Row="4" Grid.Column="0" Content="Version Sigma 2.0.0" FontSize="16" FontWeight="Bold" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
-        
+        <!--About section-->
+        <Label Grid.Row="0" Grid.Column="0" Content="About" FontSize="100" FontFamily="Constantia" FontWeight="Bold" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+        <Label Grid.Row="1" Grid.Column="0" Content="{Binding NameLabel}" FontSize="50" FontFamily="Constantia" FontWeight="DemiBold" Foreground="DarkGray" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Label Grid.Row="2" Grid.Column="0" Content="{Binding EMailLabel}" FontSize="50" FontFamily="Constantia" FontWeight="DemiBold" Foreground="DarkGray" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Label Grid.Row="3" Grid.Column="0" Content="{Binding GRLabel}" FontSize="50" FontFamily="Constantia" FontWeight="DemiBold" Foreground="DarkGray" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+
+        <!--Description section-->
+        <Label Grid.Row="1" Grid.Column="1" Content="Game Description" FontSize="70" FontFamily="Constantia" FontWeight="Bold" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label Grid.Row="2" Grid.Column="1" Content="{Binding GameDescription}" FontSize="15" FontFamily="Constantia" FontWeight="Light" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <Label Grid.Row="4" Grid.Column="0" Content="Version Sigma 2.0.0" FontSize="18" FontFamily="Constantia" FontWeight="Bold" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+
+        <Button Grid.Row="3" Grid.Column="1" Style="{StaticResource CustomButtonStyle}" FontFamily="Constantia" Content="Go Back" Command="{Binding SwitchToMenuCommand}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,120,0,0" Width="240" Height="44"/>
     </Grid>
 </UserControl>

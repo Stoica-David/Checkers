@@ -9,6 +9,20 @@ namespace CheckersGame.ViewModels
 {
     public class MainWindowVM : BaseVM
     {
+        // Singleton
+        private static MainWindowVM _instance;
+        public static MainWindowVM Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new MainWindowVM();
+                }
+                return _instance;
+            }
+        }
+
         // Properties
         private BaseVM selectedVM;
         public BaseVM SelectedVM
@@ -28,6 +42,8 @@ namespace CheckersGame.ViewModels
         public MenuVM MenuViewModel { get; set; }
         public HelpVM HelpViewModel { get; set; }
 
+        public StatisticsVM StatisticsViewModel {  get; set; }
+
 
         // Methods
         public MainWindowVM()
@@ -46,7 +62,15 @@ namespace CheckersGame.ViewModels
         {
             MenuViewModel = new MenuVM();
             MenuViewModel.OnSwitchToHelp = switchToHelp;
+            MenuViewModel.OnSwitchToStats = switchToStats;
             SelectedVM = MenuViewModel;
+        }
+
+        public void switchToStats()
+        {
+            StatisticsViewModel = new StatisticsVM("Statistics.xml");
+            //StatisticsViewModel.OnSwitchToMenu = switchToMenu;
+            SelectedVM = StatisticsViewModel;
         }
     }
 }

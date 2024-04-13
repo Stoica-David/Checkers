@@ -10,6 +10,21 @@ namespace CheckersGame.ViewModels
 {
     public class BaseVM : INotifyPropertyChanged
     {
+        private BaseVM currentVM;
+        public BaseVM CurrentVM
+        {
+            set
+            {
+                this.currentVM = value;
+                OnPropertyChanged();
+            }
+
+            get 
+            { 
+                return this.currentVM; 
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string name = null)
         {

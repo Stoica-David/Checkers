@@ -5,14 +5,97 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CheckersGame.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="1080" d:DesignWidth="1920"
+             Background="#EBE0CD">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type Button}" x:Key="CellStyle">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" 
+                                Width="{Binding CellWidth}" 
+                                Height="{Binding CellHeight}"
+                                BorderThickness="0"
+                                Padding="4,2" 
+                                BorderBrush="Black"  
+                                Background="{Binding MyCell.ColorName}">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                              VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="Black" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Button Grid.Row="3" Grid.Column="1" Style="{StaticResource CustomButtonStyle}" FontFamily="Constantia" Content="Go Back" Command="{Binding SwitchToGameCommand}"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" RenderTransformOrigin="0.5,0.5" Width="188"></Button>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
+        <ItemsControl Name="grid" 
+                      ItemsSource="{Binding GameBoard}" 
+                      VerticalAlignment="Center"
+                      HorizontalAlignment="Center"
+                      Grid.Column="1"
+                      Grid.Row="1"
+                      BorderBrush="#99090909" 
+                      BorderThickness="10" Background="#CC260202">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <ItemsControl ItemsSource="{Binding}" Background="Black">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <UniformGrid Columns="8" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Button Command="{Binding ClickCommand}" 
+                                            CommandParameter="{Binding MyCell}"
+                                            Style="{StaticResource  CellStyle}">
+                                    <Image Source="{Binding MyCell.CurrentPiece.Image, TargetNullValue={x:Null}}"/>
+                                </Button>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding GameLogic.PlayerToMove}" 
+                   Foreground="Black" FontSize="45" FontFamily="Constantia" VerticalAlignment="Center"
+                   HorizontalAlignment="Center"/>
+        
+        <Grid Grid.Column="1" Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="1" Text="Multiple jumps" FontFamily="Constantia" VerticalAlignment="Center"
+                       HorizontalAlignment="Left" FontSize="30" Foreground="Black" Margin="20"/>
+        </Grid>
+
+        <Image Grid.Row="0" Grid.Column="0"  Source="/CheckersGame;component/Resources/LOGO.png" Stretch="Uniform" HorizontalAlignment="Left"/>
+        <Button Grid.Row="2" Grid.Column="0" Style="{StaticResource CustomButtonStyle}" FontFamily="Constantia" Content="Go Back" Command="{Binding SwitchToMenuCommand}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="240" Height="44"/>
+        
+        <Button Grid.Row="1" Grid.Column="2" Style="{StaticResource CustomButtonStyle}" FontFamily="Constantia" Content="New Game" Command="{Binding NewGameCommand}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,120,0,0" Width="240" Height="44"/>
+        <Button Grid.Row="1" Grid.Column="2" Style="{StaticResource CustomButtonStyle}" FontFamily="Constantia" Content="Save Game" Command="{Binding SaveGameCommand}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,120,0,0" Width="240" Height="44"/>
+        <Button Grid.Row="1" Grid.Column="2" Style="{StaticResource CustomButtonStyle}" FontFamily="Constantia" Content="Open Game" Command="{Binding OpenGameCommand}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,120,0,0" Width="240" Height="44"/>
     </Grid>
+
 </UserControl>

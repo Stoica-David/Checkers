@@ -41,13 +41,13 @@
             <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
 
-        <Label Grid.Row="0" Grid.Column="0" Content="Black" FontSize="100" FontWeight="Bold" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Label Grid.Row="0" Grid.Column="1" Content="White" FontSize="100" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label Grid.Row="0" Grid.Column="0" Content="Black" FontFamily="Constantia" FontSize="100" FontWeight="Bold" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label Grid.Row="0" Grid.Column="1" Content="White" FontFamily="Constantia" FontSize="100" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-        <Label Grid.Row="1" Grid.Column="0" Content="{Binding BlackWinsString}" FontSize="25" FontWeight="DemiBold" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-        <Label Grid.Row="1" Grid.Column="1" Content="{Binding WhiteWinsString}" FontSize="25" FontWeight="DemiBold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Label Grid.Row="1" Grid.Column="0" Content="{Binding Stats.BlackWins, StringFormat=Wins: {0}}" FontSize="25" FontFamily="Constantia" FontWeight="DemiBold" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Label Grid.Row="1" Grid.Column="1" Content="{Binding Stats.WhiteWins, StringFormat=Wins: {0}}" FontSize="25" FontFamily="Constantia" FontWeight="DemiBold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
 
-        <Button Grid.Row="2" Grid.Column="1" Style="{StaticResource CustomButtonStyle}" Content="Go Back" Command="{Binding SwitchToMenuCommand}"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" RenderTransformOrigin="0.5,0.5" Width="188"/>
+        <Button Grid.Row="2" Grid.Column="1" Style="{StaticResource CustomButtonStyle}" FontFamily="Constantia" Content="Go Back" Command="{Binding SwitchToMenuCommand}"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" RenderTransformOrigin="0.5,0.5" Width="188"/>
     </Grid>
 </UserControl>

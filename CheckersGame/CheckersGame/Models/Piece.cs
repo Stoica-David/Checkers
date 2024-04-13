@@ -30,8 +30,8 @@ namespace CheckersGame
             NotifyPropertyChanged("Image");
         }
 
-        [XmlElement(Namespace = "PieceColor")]
         private Color pieceColor;
+        [XmlElement(Namespace = "PieceColor")]
         public Color PieceColor
         {
             set

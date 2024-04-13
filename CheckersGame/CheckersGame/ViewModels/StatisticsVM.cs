@@ -7,98 +7,64 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Xml;
+using Newtonsoft.Json;
+using System.IO;
+using CheckersGame.Models;
 
 namespace CheckersGame.ViewModels
 {
     public class StatisticsVM : BaseVM
     {
-        StatisticsVM () { }
+        private string filePath = "D:\\Faculta an II Sem 2\\C ascutit\\Tema 2 - Dame\\CheckersGame\\CheckersGame\\Resources\\Statistics.json";
 
-        public StatisticsVM(string filePath)
+        public Statistics Stats { get; set; }
+
+        public StatisticsVM()
         {
-            //StatisticsVM old = Utils.DeserializeObjectToXML<StatisticsVM>(filePath);
-
-            //BlackWins = old.BlackWins;
-            //WhiteWins = old.WhiteWins;
-
-            BlackWins = 1;
-            WhiteWins = 10;
+            DeserializeFromFile();
+        }
+        
+        ~StatisticsVM() 
+        {
+            SerializeToFile();
         }
 
-        ~StatisticsVM()
+        public void DeserializeFromFile()
         {
-            Utils.SerializeObjectToXML<StatisticsVM>(this, "Statistics.xml");
-        }
-
-        private int whiteWins;
-        public int WhiteWins
-        {
-            set
+            if (File.Exists(filePath))
             {
-                whiteWins = value;
-                WhiteWinsString = "Wins: " + whiteWins;
-                OnPropertyChanged();
+                StatisticsVM stats = JsonConvert.DeserializeObject<StatisticsVM>(filePath);
+
+                Stats.BlackWins = stats.Stats.BlackWins;
+                Stats.WhiteWins = stats.Stats.BlackWins;
+                Stats.MostPiecesBlack = stats.Stats.MostPiecesBlack;
+                Stats.MostPiecesWhite = stats.Stats.MostPiecesWhite;
             }
-            get
+            else
             {
-                return whiteWins;
+                throw new FileNotFoundException("Statistics file not found.", filePath);
             }
         }
 
-        private int blackWins;
-
-        public int BlackWins
+        public void SerializeToFile()
         {
-            set
-            {
-                blackWins = value;
-                BlackWinsString = "Wins: " + blackWins;
-                OnPropertyChanged();
-            }
-            get
-            {
-                return blackWins;
-            }
+            var stats = new Statistics
+            (
+                Stats.BlackWins,
+                Stats.WhiteWins,
+                Stats.MostPiecesBlack,
+                Stats.MostPiecesWhite
+            );
+
+            //var stats = new Statistics(1, 2, 3, 123);
+
+            string json = JsonConvert.SerializeObject(stats);
+            File.WriteAllText(filePath, json);
         }
 
-
-        public void UpdateFile()
-        {
-            Utils.SerializeObjectToXML<StatisticsVM>(this, "Statistics.xml");
-        }
-
-        private string whiteWinsString;
-        public string WhiteWinsString
-        {
-            set
-            {
-                whiteWinsString = value;
-                OnPropertyChanged();
-            }
-            get
-            {
-                return whiteWinsString;
-            }
-        }
-
-        private string blackWinsString;
-        public string BlackWinsString
-        {
-            set
-            {
-                blackWinsString = value;
-                OnPropertyChanged();
-            }
-            get
-            {
-                return blackWinsString;
-            }
-        }
-
-        public void SwitchToMenu()
-        {
-            MainWindowVM.Instance.SelectedVM = MainWindowVM.Instance.MenuViewModel;
-        }
+        // DELEGATES
+        public delegate void SwitchToMenu();
+        public SwitchToMenu OnSwitchToMenu { get; set; }
 
         private ICommand switchToMenuCommand;
         public ICommand SwitchToMenuCommand
@@ -107,7 +73,7 @@ namespace CheckersGame.ViewModels
             {
                 if (switchToMenuCommand == null)
                 {
-                    switchToMenuCommand = new RelayCommand(o => true, o => { SwitchToMenu(); });
+                    switchToMenuCommand = new RelayCommand(o => true, o => { OnSwitchToMenu(); });
                 }
 
                 return switchToMenuCommand;

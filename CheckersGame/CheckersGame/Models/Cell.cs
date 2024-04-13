@@ -30,8 +30,8 @@ namespace CheckersGame.Models
             currentPiece = null;
         }
 
-        [XmlElement(Namespace = "CellColor")]
         private Color cellcolor;
+        [XmlElement(Namespace = "CellColor")]
         public Color CellColor
         {
             set

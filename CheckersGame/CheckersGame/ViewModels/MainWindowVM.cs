@@ -9,20 +9,6 @@ namespace CheckersGame.ViewModels
 {
     public class MainWindowVM : BaseVM
     {
-        // Singleton
-        private static MainWindowVM _instance;
-        public static MainWindowVM Instance
-        {
-            get
-            {
-                if (_instance == null)
-                {
-                    _instance = new MainWindowVM();
-                }
-                return _instance;
-            }
-        }
-
         // Properties
         private BaseVM selectedVM;
         public BaseVM SelectedVM
@@ -68,8 +54,8 @@ namespace CheckersGame.ViewModels
 
         public void switchToStats()
         {
-            StatisticsViewModel = new StatisticsVM("Statistics.xml");
-            //StatisticsViewModel.OnSwitchToMenu = switchToMenu;
+            StatisticsViewModel = new StatisticsVM();
+            StatisticsViewModel.OnSwitchToMenu = switchToMenu;
             SelectedVM = StatisticsViewModel;
         }
     }

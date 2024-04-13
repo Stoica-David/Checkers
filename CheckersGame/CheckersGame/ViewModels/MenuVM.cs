@@ -9,19 +9,6 @@ namespace CheckersGame.ViewModels
 {
     public class MenuVM : BaseVM
     {
-        private static MenuVM _instance;
-        public static MenuVM Instance
-        {
-            get
-            {
-                if (_instance == null)
-                {
-                    _instance = new MenuVM();
-                }
-                return _instance;
-            }
-        }
-
         // COMMAND
 
         private ICommand switchToStatsCommand;

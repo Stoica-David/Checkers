@@ -22,7 +22,7 @@ namespace CheckersGame.Services
             this.FirstPlayer.IsMyTurn = true;
             this.IsGameOver = false;
             this.MultipleJumps = false;
-            this.Statistics = new StatisticsVM("Statistics.xml");
+            this.Statistics = new StatisticsVM();
         }
 
         private Player firstPlayer, secondPlayer;
@@ -56,6 +56,12 @@ namespace CheckersGame.Services
             set
             {
                 isGameOver = value;
+
+                if(isGameOver == true)
+                {
+                    Statistics.SerializeToFile();
+                }
+
                 NotifyPropertyChanged("IsGameOver");
             }
             get
@@ -155,11 +161,11 @@ namespace CheckersGame.Services
             
                 if (CurrentPlayer().PlayerColor == Color.Black)
                 {
-                    Statistics.BlackWins++;
+                    Statistics.Stats.BlackWins++;
                 }
                 else
                 {
-                    Statistics.WhiteWins++;
+                    Statistics.Stats.WhiteWins++;
                 }
             }
 

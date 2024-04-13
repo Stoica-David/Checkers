@@ -20,9 +20,9 @@ namespace CheckersGame.Services
             this.board = cells;
             this.firstPlayer = new Player(Color.Black);
             this.secondPlayer = new Player(Color.White);
-            this.FirstPlayer.IsMyTurn = true;
+            this.FirstPlayer.IsMyTurn = true; 
             this.IsGameOver = false;
-            this.MultipleJumps = false;
+            this.MultipleJumps = Settings.Default.IsToggleButtonChecked;
             this.Statistics = new StatisticsVM();
         }
 
@@ -65,6 +65,23 @@ namespace CheckersGame.Services
             }
         }
 
+        public bool IsToggleButtonChecked
+        {
+            get
+            {
+                return Settings.Default.IsToggleButtonChecked;
+            }
+
+            set
+            {
+                if (Settings.Default.IsToggleButtonChecked != value)
+                {
+                    Settings.Default.IsToggleButtonChecked = value;
+                    Settings.Default.Save();
+                }
+            }
+        }
+
         private bool multipleJumps;
         public bool MultipleJumps
         {
@@ -72,11 +89,22 @@ namespace CheckersGame.Services
             {
                 multipleJumps = value;
 
+                if (Settings.Default.IsToggleButtonChecked != value)
+                {
+                    Settings.Default.IsToggleButtonChecked = value;
+                    Settings.Default.Save();
+                }
+
                 NotifyPropertyChanged("MultipleJumps");
             }
             get
             {
-                return multipleJumps;
+                //if (Settings.Default.IsToggleButtonChecked != multipleJumps)
+                //{
+                //    multipleJumps = Settings.Default.IsToggleButtonChecked;
+                //}
+
+                return Settings.Default.IsToggleButtonChecked;
             }
         }
 

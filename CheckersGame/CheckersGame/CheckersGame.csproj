@@ -180,16 +180,19 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\blackKing.png" />
-    <Resource Include="Resources\blackPiece.png" />
-    <Resource Include="Resources\whiteKing.png" />
-    <Resource Include="Resources\whitePiece.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="bin\Debug\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\bg.png" />
+    <Resource Include="Resources\blackK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\blackP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\whiteK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\whiteP.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

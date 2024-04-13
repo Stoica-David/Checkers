@@ -4,6 +4,7 @@ using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -183,13 +184,20 @@ namespace CheckersGame.ViewModels
             myResult = openfile.ShowDialog();
             if (myResult != null && myResult == true)
             {
-                var logic = Utils.DeserializeObjectToXML<GameBusinessLogic>(openfile.FileName);
-                logic.Statistics = this.GameLogic.Statistics;
-                this.GameLogic = logic;
-                this.GameLogic.Statistics = new StatisticsVM();
-                this.GameLogic.Statistics.DeserializeFromFile();
-                var board = GameLogic.Board;
-                GameBoard = CellBoardToCellVMBoard(ref board);
+                try
+                {
+                    var logic = Utils.DeserializeObjectToXML<GameBusinessLogic>(openfile.FileName);
+                    logic.Statistics = this.GameLogic.Statistics;
+                    this.GameLogic = logic;
+                    this.GameLogic.Statistics = new StatisticsVM();
+                    this.GameLogic.Statistics.DeserializeFromFile();
+                    var board = GameLogic.Board;
+                    GameBoard = CellBoardToCellVMBoard(ref board);
+                }
+                catch
+                {
+
+                }
             }
         }
 

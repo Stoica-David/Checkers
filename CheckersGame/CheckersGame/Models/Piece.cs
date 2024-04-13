@@ -20,11 +20,11 @@ namespace CheckersGame
 
             if (pieceColor == Color.Black)
             {
-                image = @"/Resources/blackPiece.png";
+                image = @"/Resources/blackP.png";
             }
             else
             {
-                image = @"/Resources/whitePiece.png";
+                image = @"/Resources/whiteP.png";
             }
 
             NotifyPropertyChanged("Image");
@@ -58,11 +58,11 @@ namespace CheckersGame
                 {
                     if (pieceColor == Color.Black)
                     {
-                        return image = @"/Resources/blackKing.png";
+                        return image = @"/Resources/blackK.png";
                     }
                     else
                     {
-                        return image = @"/Resources/whiteKing.png";
+                        return image = @"/Resources/whiteK.png";
                     }
                 }
                 return image;

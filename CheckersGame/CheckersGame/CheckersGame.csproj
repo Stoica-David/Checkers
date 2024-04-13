@@ -55,6 +55,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\Color.cs" />
+    <Compile Include="Models\Cell.cs" />
+    <Compile Include="Models\Piece.cs" />
+    <Compile Include="Models\Player.cs" />
+    <Compile Include="Models\Position.cs" />
     <Compile Include="RelayCommand.cs" />
     <Compile Include="ViewModels\BaseVM.cs" />
     <Compile Include="ViewModels\HelpVM.cs" />
@@ -114,8 +119,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
     <Folder Include="Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\blackKing.png" />
+    <Resource Include="Resources\blackPiece.png" />
+    <Resource Include="Resources\whiteKing.png" />
+    <Resource Include="Resources\whitePiece.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

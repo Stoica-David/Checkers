@@ -14,6 +14,20 @@ namespace CheckersGame.Services
 {
     public class GameBusinessLogic : INotifyPropertyChanged
     {
+        private bool gameStarted = false;
+        public bool GameStarted
+        {
+            set
+            {
+                gameStarted = value;
+                NotifyPropertyChanged("GameStarted");
+            }
+            get
+            {
+                return gameStarted;
+            }
+        }
+
         public GameBusinessLogic() { }
         public GameBusinessLogic(ref ObservableCollection<ObservableCollection<Cell>> cells)
         {
@@ -87,23 +101,21 @@ namespace CheckersGame.Services
         {
             set
             {
-                multipleJumps = value;
-
-                if (Settings.Default.IsToggleButtonChecked != value)
+                if (!gameStarted)
                 {
-                    Settings.Default.IsToggleButtonChecked = value;
-                    Settings.Default.Save();
-                }
+                    multipleJumps = value;
 
-                NotifyPropertyChanged("MultipleJumps");
+                    if (Settings.Default.IsToggleButtonChecked != value)
+                    {
+                        Settings.Default.IsToggleButtonChecked = value;
+                        Settings.Default.Save();
+                    }
+
+                    NotifyPropertyChanged("MultipleJumps");
+                }
             }
             get
             {
-                //if (Settings.Default.IsToggleButtonChecked != multipleJumps)
-                //{
-                //    multipleJumps = Settings.Default.IsToggleButtonChecked;
-                //}
-
                 return Settings.Default.IsToggleButtonChecked;
             }
         }
@@ -470,6 +482,7 @@ namespace CheckersGame.Services
             if (!isGameOver)
             {
                 HandleMove(obj);
+                gameStarted = true;
             }
         }
 

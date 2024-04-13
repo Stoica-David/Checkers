@@ -38,16 +38,21 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="300"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="200"/>
         </Grid.RowDefinitions>
 
         <Label Grid.Row="0" Grid.Column="0" Content="Black" FontFamily="Constantia" FontSize="100" FontWeight="Bold" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <Label Grid.Row="0" Grid.Column="1" Content="White" FontFamily="Constantia" FontSize="100" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-        <Label Grid.Row="1" Grid.Column="0" Content="{Binding Stats.BlackWins, StringFormat=Wins: {0}}" FontSize="25" FontFamily="Constantia" FontWeight="DemiBold" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-        <Label Grid.Row="1" Grid.Column="1" Content="{Binding Stats.WhiteWins, StringFormat=Wins: {0}}" FontSize="25" FontFamily="Constantia" FontWeight="DemiBold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Label Grid.Row="1" Grid.Column="0" Content="{Binding Stats.BlackWinsString}" FontSize="25" FontFamily="Constantia" FontWeight="DemiBold" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label Grid.Row="1" Grid.Column="1" Content="{Binding Stats.WhiteWinsString}" FontSize="25" FontFamily="Constantia" FontWeight="DemiBold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+     
+        <Label Grid.Row="2" Grid.Column="0" Content="{Binding Stats.MostPiecesBlackString}" FontSize="25" FontFamily="Constantia" FontWeight="DemiBold" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Label Grid.Row="2" Grid.Column="1" Content="{Binding Stats.MostPiecesWhiteString}" FontSize="25" FontFamily="Constantia" FontWeight="DemiBold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
 
-        <Button Grid.Row="2" Grid.Column="1" Style="{StaticResource CustomButtonStyle}" FontFamily="Constantia" Content="Go Back" Command="{Binding SwitchToMenuCommand}"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" RenderTransformOrigin="0.5,0.5" Width="188"/>
+        <Image Grid.Row="3" Grid.Column="0"  Source="/CheckersGame;component/Resources/LOGO.png" Stretch="Uniform" HorizontalAlignment="Left"/>
+        <Button Grid.Row="3" Grid.Column="1" Style="{StaticResource CustomButtonStyle}" FontFamily="Constantia" Content="Go Back" Command="{Binding SwitchToMenuCommand}"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" RenderTransformOrigin="0.5,0.5" Width="188"></Button>
     </Grid>
 </UserControl>

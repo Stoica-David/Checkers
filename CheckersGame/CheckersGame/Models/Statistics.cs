@@ -1,11 +1,11 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json.Serialization;
 
 namespace CheckersGame.Models
 {
@@ -83,6 +83,36 @@ namespace CheckersGame.Models
             }
         }
 
+        private string mostPiecesWhiteString;
+        [JsonIgnore]
+        public string MostPiecesWhiteString
+        {
+            set
+            {
+                mostPiecesWhiteString = value;
+                OnPropertyChanged();
+            }
+            get
+            {
+                return mostPiecesWhiteString;
+            }
+        }
+
+        private string mostPiecesBlackString;
+        [JsonIgnore]
+        public string MostPiecesBlackString
+        {
+            set
+            {
+                mostPiecesBlackString = value;
+                OnPropertyChanged();
+            }
+            get
+            {
+                return mostPiecesBlackString;
+            }
+        }
+
 
         private int mostPiecesBlack;
         public int MostPiecesBlack
@@ -90,6 +120,7 @@ namespace CheckersGame.Models
             set
             {
                 mostPiecesBlack = value;
+                MostPiecesBlackString = "Most pieces: " + mostPiecesBlack;
                 OnPropertyChanged();
             }
             get
@@ -104,6 +135,7 @@ namespace CheckersGame.Models
             set
             {
                 mostPiecesWhite = value;
+                MostPiecesWhiteString = "Most pieces: " + mostPiecesWhite;
                 OnPropertyChanged();
             }
             get

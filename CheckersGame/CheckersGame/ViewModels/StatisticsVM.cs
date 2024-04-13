@@ -7,9 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Xml;
-using Newtonsoft.Json;
 using System.IO;
 using CheckersGame.Models;
+using System.Text.Json;
 
 namespace CheckersGame.ViewModels
 {
@@ -33,12 +33,14 @@ namespace CheckersGame.ViewModels
         {
             if (File.Exists(filePath))
             {
-                StatisticsVM stats = JsonConvert.DeserializeObject<StatisticsVM>(filePath);
+                string json = File.ReadAllText(filePath);
+                Statistics stats = JsonSerializer.Deserialize<Statistics>(json);
 
-                Stats.BlackWins = stats.Stats.BlackWins;
-                Stats.WhiteWins = stats.Stats.BlackWins;
-                Stats.MostPiecesBlack = stats.Stats.MostPiecesBlack;
-                Stats.MostPiecesWhite = stats.Stats.MostPiecesWhite;
+                Stats = new Statistics();
+                Stats.BlackWins = stats.BlackWins;
+                Stats.WhiteWins = stats.WhiteWins;
+                Stats.MostPiecesBlack = stats.MostPiecesBlack;
+                Stats.MostPiecesWhite = stats.MostPiecesWhite;
             }
             else
             {
@@ -58,7 +60,7 @@ namespace CheckersGame.ViewModels
 
             //var stats = new Statistics(1, 2, 3, 123);
 
-            string json = JsonConvert.SerializeObject(stats);
+            string json = JsonSerializer.Serialize(stats);
             File.WriteAllText(filePath, json);
         }
 

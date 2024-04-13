@@ -168,31 +168,22 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Resources\firstGame" />
     <None Include="Resources\Statistics.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\blackK.png" />
+    <Resource Include="Resources\blackP.png" />
     <Resource Include="Resources\Logo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resources\whiteK.png" />
+    <Resource Include="Resources\whiteP.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Debug\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\blackK.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\blackP.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\whiteK.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\whiteP.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

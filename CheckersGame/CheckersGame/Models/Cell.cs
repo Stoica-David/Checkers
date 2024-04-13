@@ -10,7 +10,7 @@ namespace CheckersGame.Models
 {
     public class Cell : INotifyPropertyChanged
     {
-        public Cell() 
+        public Cell()
         {
         }
 
@@ -25,7 +25,7 @@ namespace CheckersGame.Models
             {
                 CellColor = Color.White;
             }
-            
+
             Position = new Position(x, y);
             currentPiece = null;
         }
@@ -37,7 +37,7 @@ namespace CheckersGame.Models
             set
             {
                 cellcolor = value;
-                
+
                 if (cellcolor == Color.Black)
                 {
                     ColorName = "#774936";
@@ -96,6 +96,7 @@ namespace CheckersGame.Models
                 NotifyPropertyChanged("CurrentPiece");
             }
         }
+
         private bool isSelected;
         public bool IsSelected
         {
@@ -103,7 +104,7 @@ namespace CheckersGame.Models
             {
                 if (value == true)
                 {
-                    ColorName = "#ff051e";
+                    ColorName = "#A72C22";
                 }
                 else
                 {
@@ -112,7 +113,7 @@ namespace CheckersGame.Models
                         ColorName = "#774936";
                     }
                     else
-                    { 
+                    {
                         ColorName = "#F2F3AE";
                     }
                 }

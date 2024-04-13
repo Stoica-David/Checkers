@@ -134,32 +134,6 @@ namespace CheckersGame.ViewModels
             }
         }
 
-        private bool showStats;
-        public bool ShowStats
-        {
-            set
-            {
-                showStats = value; 
-                OnPropertyChanged();
-            }
-            get
-            {
-                return showStats;
-            }
-        }
-        private bool showAbout;
-        public bool ShowAbout
-        {
-            set
-            {
-                showAbout = value;
-                OnPropertyChanged();
-            }
-            get
-            {
-                return showAbout;
-            }
-        }
         public void RestartGame()
         {
             ObservableCollection<ObservableCollection<Cell>> board = Utils.InitGameBoard();

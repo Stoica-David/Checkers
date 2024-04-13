@@ -56,12 +56,6 @@ namespace CheckersGame.Services
             set
             {
                 isGameOver = value;
-
-                if(isGameOver == true)
-                {
-                    Statistics.SerializeToFile();
-                }
-
                 NotifyPropertyChanged("IsGameOver");
             }
             get
@@ -106,6 +100,33 @@ namespace CheckersGame.Services
             {
                 if (isGameOver == true)
                 {
+                    if (CurrentPlayer().PlayerColor == Color.Black)
+                    {
+                        int whitePiecesLeft = 0;
+
+                        board.ToList().ForEach(row => row.ToList().ForEach(
+                        cell => {
+                            if (cell.CurrentPiece != null && cell.CurrentPiece.PieceColor == Color.White)
+                                ++whitePiecesLeft;
+                        }));
+
+                        Statistics.Stats.MostPiecesWhite = Math.Min(Statistics.Stats.MostPiecesWhite, whitePiecesLeft); 
+                    }
+                    else
+                    {
+                        int blackPiecesLeft = 0;
+
+                        board.ToList().ForEach(row => row.ToList().ForEach(
+                        cell => {
+                            if (cell.CurrentPiece != null && cell.CurrentPiece.PieceColor == Color.White)
+                                ++blackPiecesLeft;
+                        }));
+
+                        Statistics.Stats.MostPiecesWhite = Math.Min(Statistics.Stats.MostPiecesBlack, blackPiecesLeft);
+                    }
+
+                    Statistics.SerializeToFile();
+
                     return CurrentPlayer().Username + " won!";
                 }
 

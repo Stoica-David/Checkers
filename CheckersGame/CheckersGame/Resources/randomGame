@@ -32,7 +32,7 @@
         </Position>
         <CurrentPiece>
           <PieceColor xmlns="PieceColor">White</PieceColor>
-          <Image>/Resources/whitePiece.png</Image>
+          <Image>/Resources/whiteP.png</Image>
           <King>false</King>
         </CurrentPiece>
         <IsSelected>false</IsSelected>
@@ -55,7 +55,7 @@
         </Position>
         <CurrentPiece>
           <PieceColor xmlns="PieceColor">White</PieceColor>
-          <Image>/Resources/whitePiece.png</Image>
+          <Image>/Resources/whiteP.png</Image>
           <King>false</King>
         </CurrentPiece>
         <IsSelected>false</IsSelected>
@@ -78,7 +78,7 @@
         </Position>
         <CurrentPiece>
           <PieceColor xmlns="PieceColor">White</PieceColor>
-          <Image>/Resources/whitePiece.png</Image>
+          <Image>/Resources/whiteP.png</Image>
           <King>false</King>
         </CurrentPiece>
         <IsSelected>false</IsSelected>
@@ -101,7 +101,7 @@
         </Position>
         <CurrentPiece>
           <PieceColor xmlns="PieceColor">White</PieceColor>
-          <Image>/Resources/whitePiece.png</Image>
+          <Image>/Resources/whiteP.png</Image>
           <King>false</King>
         </CurrentPiece>
         <IsSelected>false</IsSelected>
@@ -117,7 +117,7 @@
         </Position>
         <CurrentPiece>
           <PieceColor xmlns="PieceColor">White</PieceColor>
-          <Image>/Resources/whitePiece.png</Image>
+          <Image>/Resources/whiteP.png</Image>
           <King>false</King>
         </CurrentPiece>
         <IsSelected>false</IsSelected>
@@ -140,7 +140,7 @@
         </Position>
         <CurrentPiece>
           <PieceColor xmlns="PieceColor">White</PieceColor>
-          <Image>/Resources/whitePiece.png</Image>
+          <Image>/Resources/whiteP.png</Image>
           <King>false</King>
         </CurrentPiece>
         <IsSelected>false</IsSelected>
@@ -163,7 +163,7 @@
         </Position>
         <CurrentPiece>
           <PieceColor xmlns="PieceColor">White</PieceColor>
-          <Image>/Resources/whitePiece.png</Image>
+          <Image>/Resources/whiteP.png</Image>
           <King>false</King>
         </CurrentPiece>
         <IsSelected>false</IsSelected>
@@ -186,7 +186,7 @@
         </Position>
         <CurrentPiece>
           <PieceColor xmlns="PieceColor">White</PieceColor>
-          <Image>/Resources/whitePiece.png</Image>
+          <Image>/Resources/whiteP.png</Image>
           <King>false</King>
         </CurrentPiece>
         <IsSelected>false</IsSelected>
@@ -220,7 +220,7 @@
         </Position>
         <CurrentPiece>
           <PieceColor xmlns="PieceColor">White</PieceColor>
-          <Image>/Resources/whitePiece.png</Image>
+          <Image>/Resources/whiteP.png</Image>
           <King>false</King>
         </CurrentPiece>
         <IsSelected>false</IsSelected>
@@ -240,35 +240,30 @@
         <Position>
           <X>2</X>
           <Y>3</Y>
-        </Position>
-        <CurrentPiece>
-          <PieceColor xmlns="PieceColor">Black</PieceColor>
-          <Image>/Resources/blackPiece.png</Image>
-          <King>false</King>
-        </CurrentPiece>
-        <IsSelected>false</IsSelected>
-      </Cell>
-      <Cell>
-        <CellColor xmlns="CellColor">White</CellColor>
-        <ColorName>#F2F3AE</ColorName>
-        <Position>
-          <X>2</X>
-          <Y>4</Y>
-        </Position>
-        <IsSelected>false</IsSelected>
-      </Cell>
-      <Cell>
-        <CellColor xmlns="CellColor">Black</CellColor>
-        <ColorName>#774936</ColorName>
-        <Position>
-          <X>2</X>
-          <Y>5</Y>
         </Position>
         <CurrentPiece>
           <PieceColor xmlns="PieceColor">White</PieceColor>
-          <Image>/Resources/whitePiece.png</Image>
+          <Image>/Resources/whiteP.png</Image>
           <King>false</King>
         </CurrentPiece>
+        <IsSelected>false</IsSelected>
+      </Cell>
+      <Cell>
+        <CellColor xmlns="CellColor">White</CellColor>
+        <ColorName>#F2F3AE</ColorName>
+        <Position>
+          <X>2</X>
+          <Y>4</Y>
+        </Position>
+        <IsSelected>false</IsSelected>
+      </Cell>
+      <Cell>
+        <CellColor xmlns="CellColor">Black</CellColor>
+        <ColorName>#774936</ColorName>
+        <Position>
+          <X>2</X>
+          <Y>5</Y>
+        </Position>
         <IsSelected>false</IsSelected>
       </Cell>
       <Cell>
@@ -286,59 +281,59 @@
         <Position>
           <X>2</X>
           <Y>7</Y>
+        </Position>
+        <IsSelected>false</IsSelected>
+      </Cell>
+    </ArrayOfCell>
+    <ArrayOfCell>
+      <Cell>
+        <CellColor xmlns="CellColor">Black</CellColor>
+        <ColorName>#774936</ColorName>
+        <Position>
+          <X>3</X>
+          <Y>0</Y>
+        </Position>
+        <IsSelected>false</IsSelected>
+      </Cell>
+      <Cell>
+        <CellColor xmlns="CellColor">White</CellColor>
+        <ColorName>#F2F3AE</ColorName>
+        <Position>
+          <X>3</X>
+          <Y>1</Y>
+        </Position>
+        <IsSelected>false</IsSelected>
+      </Cell>
+      <Cell>
+        <CellColor xmlns="CellColor">Black</CellColor>
+        <ColorName>#774936</ColorName>
+        <Position>
+          <X>3</X>
+          <Y>2</Y>
+        </Position>
+        <IsSelected>false</IsSelected>
+      </Cell>
+      <Cell>
+        <CellColor xmlns="CellColor">White</CellColor>
+        <ColorName>#F2F3AE</ColorName>
+        <Position>
+          <X>3</X>
+          <Y>3</Y>
+        </Position>
+        <IsSelected>false</IsSelected>
+      </Cell>
+      <Cell>
+        <CellColor xmlns="CellColor">Black</CellColor>
+        <ColorName>#774936</ColorName>
+        <Position>
+          <X>3</X>
+          <Y>4</Y>
         </Position>
         <CurrentPiece>
           <PieceColor xmlns="PieceColor">White</PieceColor>
-          <Image>/Resources/whitePiece.png</Image>
+          <Image>/Resources/whiteP.png</Image>
           <King>false</King>
         </CurrentPiece>
-        <IsSelected>false</IsSelected>
-      </Cell>
-    </ArrayOfCell>
-    <ArrayOfCell>
-      <Cell>
-        <CellColor xmlns="CellColor">Black</CellColor>
-        <ColorName>#774936</ColorName>
-        <Position>
-          <X>3</X>
-          <Y>0</Y>
-        </Position>
-        <IsSelected>false</IsSelected>
-      </Cell>
-      <Cell>
-        <CellColor xmlns="CellColor">White</CellColor>
-        <ColorName>#F2F3AE</ColorName>
-        <Position>
-          <X>3</X>
-          <Y>1</Y>
-        </Position>
-        <IsSelected>false</IsSelected>
-      </Cell>
-      <Cell>
-        <CellColor xmlns="CellColor">Black</CellColor>
-        <ColorName>#774936</ColorName>
-        <Position>
-          <X>3</X>
-          <Y>2</Y>
-        </Position>
-        <IsSelected>false</IsSelected>
-      </Cell>
-      <Cell>
-        <CellColor xmlns="CellColor">White</CellColor>
-        <ColorName>#F2F3AE</ColorName>
-        <Position>
-          <X>3</X>
-          <Y>3</Y>
-        </Position>
-        <IsSelected>false</IsSelected>
-      </Cell>
-      <Cell>
-        <CellColor xmlns="CellColor">Black</CellColor>
-        <ColorName>#774936</ColorName>
-        <Position>
-          <X>3</X>
-          <Y>4</Y>
-        </Position>
         <IsSelected>false</IsSelected>
       </Cell>
       <Cell>
@@ -422,6 +417,11 @@
           <X>4</X>
           <Y>5</Y>
         </Position>
+        <CurrentPiece>
+          <PieceColor xmlns="PieceColor">Black</PieceColor>
+          <Image>/Resources/blackP.png</Image>
+          <King>false</King>
+        </CurrentPiece>
         <IsSelected>false</IsSelected>
       </Cell>
       <Cell>
@@ -440,6 +440,11 @@
           <X>4</X>
           <Y>7</Y>
         </Position>
+        <CurrentPiece>
+          <PieceColor xmlns="PieceColor">Black</PieceColor>
+          <Image>/Resources/blackP.png</Image>
+          <King>false</King>
+        </CurrentPiece>
         <IsSelected>false</IsSelected>
       </Cell>
     </ArrayOfCell>
@@ -453,7 +458,7 @@
         </Position>
         <CurrentPiece>
           <PieceColor xmlns="PieceColor">Black</PieceColor>
-          <Image>/Resources/blackPiece.png</Image>
+          <Image>/Resources/blackP.png</Image>
           <King>false</King>
         </CurrentPiece>
         <IsSelected>false</IsSelected>
@@ -476,7 +481,7 @@
         </Position>
         <CurrentPiece>
           <PieceColor xmlns="PieceColor">Black</PieceColor>
-          <Image>/Resources/blackPiece.png</Image>
+          <Image>/Resources/blackP.png</Image>
           <King>false</King>
         </CurrentPiece>
         <IsSelected>false</IsSelected>
@@ -515,11 +520,6 @@
           <X>5</X>
           <Y>6</Y>
         </Position>
-        <CurrentPiece>
-          <PieceColor xmlns="PieceColor">Black</PieceColor>
-          <Image>/Resources/blackPiece.png</Image>
-          <King>false</King>
-        </CurrentPiece>
         <IsSelected>false</IsSelected>
       </Cell>
       <Cell>
@@ -551,7 +551,7 @@
         </Position>
         <CurrentPiece>
           <PieceColor xmlns="PieceColor">Black</PieceColor>
-          <Image>/Resources/blackPiece.png</Image>
+          <Image>/Resources/blackP.png</Image>
           <King>false</King>
         </CurrentPiece>
         <IsSelected>false</IsSelected>
@@ -572,11 +572,6 @@
           <X>6</X>
           <Y>3</Y>
         </Position>
-        <CurrentPiece>
-          <PieceColor xmlns="PieceColor">Black</PieceColor>
-          <Image>/Resources/blackPiece.png</Image>
-          <King>false</King>
-        </CurrentPiece>
         <IsSelected>false</IsSelected>
       </Cell>
       <Cell>
@@ -597,7 +592,7 @@
         </Position>
         <CurrentPiece>
           <PieceColor xmlns="PieceColor">Black</PieceColor>
-          <Image>/Resources/blackPiece.png</Image>
+          <Image>/Resources/blackP.png</Image>
           <King>false</King>
         </CurrentPiece>
         <IsSelected>false</IsSelected>
@@ -620,7 +615,7 @@
         </Position>
         <CurrentPiece>
           <PieceColor xmlns="PieceColor">Black</PieceColor>
-          <Image>/Resources/blackPiece.png</Image>
+          <Image>/Resources/blackP.png</Image>
           <King>false</King>
         </CurrentPiece>
         <IsSelected>false</IsSelected>
@@ -636,7 +631,7 @@
         </Position>
         <CurrentPiece>
           <PieceColor xmlns="PieceColor">Black</PieceColor>
-          <Image>/Resources/blackPiece.png</Image>
+          <Image>/Resources/blackP.png</Image>
           <King>false</King>
         </CurrentPiece>
         <IsSelected>false</IsSelected>
@@ -659,7 +654,7 @@
         </Position>
         <CurrentPiece>
           <PieceColor xmlns="PieceColor">Black</PieceColor>
-          <Image>/Resources/blackPiece.png</Image>
+          <Image>/Resources/blackP.png</Image>
           <King>false</King>
         </CurrentPiece>
         <IsSelected>false</IsSelected>
@@ -682,7 +677,7 @@
         </Position>
         <CurrentPiece>
           <PieceColor xmlns="PieceColor">Black</PieceColor>
-          <Image>/Resources/blackPiece.png</Image>
+          <Image>/Resources/blackP.png</Image>
           <King>false</King>
         </CurrentPiece>
         <IsSelected>false</IsSelected>
@@ -705,7 +700,7 @@
         </Position>
         <CurrentPiece>
           <PieceColor xmlns="PieceColor">Black</PieceColor>
-          <Image>/Resources/blackPiece.png</Image>
+          <Image>/Resources/blackP.png</Image>
           <King>false</King>
         </CurrentPiece>
         <IsSelected>false</IsSelected>

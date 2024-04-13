@@ -23,11 +23,6 @@ namespace CheckersGame.ViewModels
         {
             DeserializeFromFile();
         }
-        
-        ~StatisticsVM() 
-        {
-            SerializeToFile();
-        }
 
         public void DeserializeFromFile()
         {
@@ -57,8 +52,6 @@ namespace CheckersGame.ViewModels
                 Stats.MostPiecesBlack,
                 Stats.MostPiecesWhite
             );
-
-            //var stats = new Statistics(1, 2, 3, 123);
 
             string json = JsonSerializer.Serialize(stats);
             File.WriteAllText(filePath, json);

@@ -17,6 +17,10 @@
         <DataTemplate DataType="{x:Type viewmodels:StatisticsVM}">
             <views:StatisticsView/>
         </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewmodels:GameVM}">
+            <views:GameView/>
+        </DataTemplate>
     </Window.Resources>
 
     <ContentControl Content="{Binding SelectedVM}"/>

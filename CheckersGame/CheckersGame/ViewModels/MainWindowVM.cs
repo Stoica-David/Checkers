@@ -29,6 +29,7 @@ namespace CheckersGame.ViewModels
         public HelpVM HelpViewModel { get; set; }
 
         public StatisticsVM StatisticsViewModel {  get; set; }
+        public GameVM GameViewModel { get; set; }
 
 
         // Methods
@@ -49,6 +50,7 @@ namespace CheckersGame.ViewModels
             MenuViewModel = new MenuVM();
             MenuViewModel.OnSwitchToHelp = switchToHelp;
             MenuViewModel.OnSwitchToStats = switchToStats;
+            MenuViewModel.OnSwitchToGame = switchToGame;
             SelectedVM = MenuViewModel;
         }
 
@@ -57,6 +59,13 @@ namespace CheckersGame.ViewModels
             StatisticsViewModel = new StatisticsVM();
             StatisticsViewModel.OnSwitchToMenu = switchToMenu;
             SelectedVM = StatisticsViewModel;
+        }
+
+        public void switchToGame()
+        {
+            GameViewModel = new GameVM();
+            GameViewModel.OnSwitchToMenu = switchToMenu;
+            SelectedVM = GameViewModel;
         }
     }
 }

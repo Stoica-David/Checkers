@@ -11,6 +11,20 @@ namespace CheckersGame.ViewModels
     {
         // COMMAND
 
+        private ICommand switchToGameCommand;
+        public ICommand SwitchToGameCommand
+        {
+            get
+            {
+                if (switchToGameCommand == null)
+                {
+                    switchToGameCommand = new RelayCommand(o => true, o => { OnSwitchToGame(); });
+                }
+
+                return switchToGameCommand;
+            }
+        }
+
         private ICommand switchToStatsCommand;
         public ICommand SwitchToStatsCommand
         {
@@ -41,7 +55,9 @@ namespace CheckersGame.ViewModels
 
         // DELEGATES
 
-        
+        public delegate void SwitchToGame();
+        public SwitchToGame OnSwitchToGame{ get; set; }
+
         public delegate void SwitchToStats();
         public SwitchToStats OnSwitchToStats { get; set; }
 

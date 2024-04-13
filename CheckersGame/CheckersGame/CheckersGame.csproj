@@ -97,10 +97,14 @@
     <Compile Include="Services\GameBusinessLogic.cs" />
     <Compile Include="Services\Utils.cs" />
     <Compile Include="ViewModels\BaseVM.cs" />
+    <Compile Include="ViewModels\GameVM.cs" />
     <Compile Include="ViewModels\HelpVM.cs" />
     <Compile Include="ViewModels\MainWindowVM.cs" />
     <Compile Include="ViewModels\MenuVM.cs" />
     <Compile Include="ViewModels\StatisticsVM.cs" />
+    <Compile Include="Views\GameView.xaml.cs">
+      <DependentUpon>GameView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\HelpView.xaml.cs">
       <DependentUpon>HelpView.xaml</DependentUpon>
     </Compile>
@@ -122,6 +126,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\GameView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\HelpView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

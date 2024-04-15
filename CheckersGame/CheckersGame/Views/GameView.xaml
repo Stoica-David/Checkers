@@ -238,7 +238,7 @@
                    Foreground="Black" FontSize="45" FontFamily="Constantia" VerticalAlignment="Center"
                    HorizontalAlignment="Center"/>
         
-        <Grid Grid.Column="1" Grid.Row="2">
+        <Grid Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="2*"/>

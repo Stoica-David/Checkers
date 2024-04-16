@@ -151,7 +151,7 @@ namespace CheckersGame.Services
                                 ++whitePiecesLeft;
                         }));
 
-                        Statistics.Stats.MostPiecesWhite = Math.Min(Statistics.Stats.MostPiecesWhite, whitePiecesLeft); 
+                        Statistics.Stats.MostPiecesWhite = Math.Max(Statistics.Stats.MostPiecesWhite, whitePiecesLeft); 
                     }
                     else
                     {
@@ -163,7 +163,7 @@ namespace CheckersGame.Services
                                 ++blackPiecesLeft;
                         }));
 
-                        Statistics.Stats.MostPiecesWhite = Math.Min(Statistics.Stats.MostPiecesBlack, blackPiecesLeft);
+                        Statistics.Stats.MostPiecesWhite = Math.Max(Statistics.Stats.MostPiecesBlack, blackPiecesLeft);
                     }
 
                     Statistics.SerializeToFile();
